@@ -32,7 +32,7 @@ class EventBinding extends React.Component {
                 </h1>
                 {/* <button onClick={() => this.handleClick()}> */}
                 {/* <button onClick={this.handleClick.bind(this)}> */}
-                <button onClick={this.handleClick}>{this.state.buttonText}</button>
+                {/* <button onClick={this.handleClick}>{this.state.buttonText}</button> */}
             </div>
         );
     }

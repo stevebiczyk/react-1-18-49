@@ -1,9 +1,9 @@
 import "./App.css";
-import EventBinding from "./components/EventBinding";
+import MethodsAsPropsParent from "./components/MethodsAsPropsParent";
 
 function App() {
   return <div className="App">
-    <EventBinding />
+    <MethodsAsPropsParent />
   </div>;
 }
 
