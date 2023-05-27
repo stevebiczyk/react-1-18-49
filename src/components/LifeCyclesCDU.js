@@ -20,7 +20,7 @@ export class LifeCyclesCDU extends Component {
         console.log('Component Updated')
         console.log('prevProps', prevProps)
         console.log('prevState', prevState)
-        if (prevProps.parentGreeting !== this.props.parentGreeting){
+        if (prevProps.parentGreeting !== this.props.parentGreeting) {
             console.log('Parent greeting has changed')
         }
     }
