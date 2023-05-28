@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import names from '../names';
+import importedNames from '../names';
+
 
 export class SearchBar extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-
+            names: importedNames
         }
     }
 
@@ -14,6 +15,7 @@ export class SearchBar extends Component {
         return (
             <div>
                 <h1>Name Search</h1>
+                <p>Matching names found: {this.state.names.length}</p>
                 <form>
                     <input
                         type="text"
@@ -21,9 +23,13 @@ export class SearchBar extends Component {
                     />
                 </form>
                 <div style={{ margin: 'auto' }}>
-                    we will render names here
+                    {this.state.names.map(name => {
+                        return <p key={name}>{name}</p>
+                    })}
                 </div>
             </div>
         )
     }
 }
+
+export default SearchBar
