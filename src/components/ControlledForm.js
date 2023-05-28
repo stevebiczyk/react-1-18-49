@@ -5,7 +5,9 @@ export class ControlledForm extends Component {
         super(props)
 
         this.state = {
-            name: ''
+            name: '',
+            category: 'website',
+            comments: '',
         }
     }
     handleNameChange = (event) => {
@@ -14,18 +16,60 @@ export class ControlledForm extends Component {
         })
     }
 
+    handleCategoryChange = (event) => {
+        this.setState({
+            category: event.target.value
+        });
+    }
+
+    handleCommentsChange = (event) => {
+        this.setState({
+            comments: event.target.value
+        });
+    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+    }
+
+
     render() {
         return (
             <div>
-                <form>
-                    <label htmlFor="id-name">Your Name:</label>
-                    <input
-                        value={this.state.name}
-                        onChange={this.handleNameChange}
-                        id="id-name"
-                        name="name"
-                        type="text"
-                    />
+                <h2>Please fill out the form below:</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label htmlFor="id-name">Your Name:</label>
+                        <input
+                            value={this.state.name}
+                            onChange={this.handleNameChange}
+                            id="id-name"
+                            name="name"
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="id-category">Query Category:</label>
+                        <select
+                            id="id-category"
+                            name="category"
+                            value={this.state.category}
+                            onChange={this.handleCategoryChange}
+                        >
+                            <option value="website">Website Issue</option>
+                            <option value="order">Order Issue</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="id-comments">Comments:</label>
+                        <textarea
+                            id="id-comments"
+                            name="comments"
+                            value={this.state.comments}
+                            onChange={this.handleCommentsChange}
+                        />
+                    </div>
                     <input type="submit" value="Submit" />
                 </form>
             </div>
